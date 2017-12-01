@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grade Calculator</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<header>
+    <h1>Grade Calculator</h1>
+</header>
+<table border="1" cellspacing="2" cellpadding="5">
+    <tr>
+        <td></td>
+        <td>Grades</td>
+        <td>Average</td>
+        <td>Weight</td>
+    </tr>
+    <tr>
+        <td>Homework</td>
+        <td>
+            <input type="text" id="hwGrades" value="" size="20">
+        </td>
+        <td>
+            <div id="hwAvg"></div>
+        </td>
+        <td>
+            <input type="number" id="hwWeight" value="" size="20">
+        </td>
+    </tr>
+    <tr>
+        <td>Quizzes</td>
+        <td>
+            <input type="text" id="quizGrades" value="" size="20">
+        </td>
+        <td>
+            <div id="quizAvg"></div>
+        </td>
+        <td>
+            <input type="number" id="quizWeight" value="" size="20">
+        </td>
+    </tr>
+    <tr>
+        <td>Tests</td>
+        <td>
+            <input type="text" id="testGrades" value="" size="20">
+        </td>
+        <td>
+            <div id="testAvg"></div>
+        </td>
+        <td>
+            <input type="number" id="testWeight" value="" size="20">
+        </td>
+    </tr>
+    <tr>
+        <td>Midterms</td>
+        <td>
+            <input type="text" id="midtermGrades" value="" size="20">
+        </td>
+        <td>
+            <div id="midtermAvg"></div>
+        </td>
+        <td>
+            <input type="number" id="midtermWeight" value="" size="20">
+        </td>
+    </tr>
+</table>
+
+
+<button id="GetCurrentGrade" onclick="calculateCurrentGrade()">Get Current Grade</button>
+<div id="currentGrade"></div>
+
+<table border="1" cellspacing="2" cellpadding="5">
+    <tr>
+        <td>Final Exam Weight</td>
+        <td>
+            <input type="number" id="finalWeight" value="" size="20">
+        </td>
+    </tr>
+    <tr>
+        <td>Desired Final Grade</td>
+        <td>
+            <input type="number" id="desiredGrade" value="" size="20">
+        </td>
+    </tr>
+</table>
+
+<button id="calcFinalExamGradeNeeded" onclick="calcFinalExamGradeNeeded()">Grade Needed on Final Exam</button>
+<div id="finalExamGradeNeeded"></div>
+
+</body>
+</html>
