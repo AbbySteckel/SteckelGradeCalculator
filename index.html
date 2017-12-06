@@ -10,14 +10,14 @@
 <header>
     <h1>Grade Calculator</h1>
 </header>
-<table border="1" cellspacing="2" cellpadding="5">
+<table id="gradeTable" border="1" cellspacing="2" cellpadding="5" align="center">
     <tr>
         <td></td>
         <td>Grades</td>
         <td>Average</td>
         <td>Weight</td>
     </tr>
-    <tr>
+    <tr id="hw">
         <td>Homework</td>
         <td>
             <input type="text" id="hwGrades" value="" size="20">
@@ -29,7 +29,7 @@
             <input type="number" id="hwWeight" value="" size="20">
         </td>
     </tr>
-    <tr>
+    <tr id="quizzes">
         <td>Quizzes</td>
         <td>
             <input type="text" id="quizGrades" value="" size="20">
@@ -41,7 +41,7 @@
             <input type="number" id="quizWeight" value="" size="20">
         </td>
     </tr>
-    <tr>
+    <tr id="tests">
         <td>Tests</td>
         <td>
             <input type="text" id="testGrades" value="" size="20">
@@ -53,7 +53,7 @@
             <input type="number" id="testWeight" value="" size="20">
         </td>
     </tr>
-    <tr>
+    <tr id="midterms">
         <td>Midterms</td>
         <td>
             <input type="text" id="midtermGrades" value="" size="20">
@@ -67,11 +67,14 @@
     </tr>
 </table>
 
+<div id="error"></div>
 
 <button id="GetCurrentGrade" onclick="calculateCurrentGrade()">Get Current Grade</button>
 <div id="currentGrade"></div>
 
-<table border="1" cellspacing="2" cellpadding="5">
+<div id="message"></div>
+
+<table border="1" cellspacing="2" cellpadding="5" align="center">
     <tr>
         <td>Final Exam Weight</td>
         <td>
@@ -88,6 +91,7 @@
 
 <button id="calcFinalExamGradeNeeded" onclick="calcFinalExamGradeNeeded()">Grade Needed on Final Exam</button>
 <div id="finalExamGradeNeeded"></div>
+
 
 </body>
 </html>

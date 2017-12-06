@@ -1,11 +1,14 @@
 h1 {
     text-align: center;
+    color: white;
 }
 
 table {
     font-size: 20px;
     margin-bottom: 10px;
+    color: white;
 }
+
 
 button {
     font-size: 20px;
@@ -15,8 +18,13 @@ button {
 
 div {
     font-size: 20px;
+    margin-bottom: 20px;
+    color: white;
+
 }
 
 body {
-
+    font-family: "Arial Rounded MT Bold";
+    background-image: url("https://umad.com/img/2015/6/pencil-wallpaper-7846-8190-hd-wallpapers.jpg");
+    text-align: center;
 }
