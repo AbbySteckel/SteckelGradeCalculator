@@ -40,6 +40,20 @@ function calculateCurrentGrade() {
         document.getElementById("currentGrade").innerHTML = Math.round(currentGrade);
     }
 }
+function calculateCurrentGrade2() {
+    clearData();
+    var hwAvg = avg(convertToArray(document.getElementById("hwGrades").value));
+    var quizAvg = avg(convertToArray(document.getElementById("quizGrades").value));
+    var testAvg = avg(convertToArray(document.getElementById("testGrades").value));
+    var midtermAvg = avg(convertToArray(document.getElementById("midtermGrades").value));
+    var hwWeight = convertToNum(hwWeight = document.getElementById("hwWeight").value);
+    var quizWeight = convertToNum(document.getElementById("quizWeight").value);
+    var testWeight = convertToNum(document.getElementById("testWeight").value);
+    var midtermWeight = convertToNum(document.getElementById("midtermWeight").value);
+    if (!isNaN(hwAvg)) {
+        document.getElementById("hwAvg").innerHTML = hwAvg;
+    }
+}
 
 function calcFinalExamGradeNeeded(){
     var desiredGrade=convertToNum(document.getElementById("desiredGrade").value);
