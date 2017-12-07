@@ -28,3 +28,11 @@ body {
     background-image: url("https://umad.com/img/2015/6/pencil-wallpaper-7846-8190-hd-wallpapers.jpg");
     text-align: center;
 }
+
+#finalExamGradeNeeded {
+    background-color: black;
+    border: 1px solid white;
+    position: relative;
+    margin: auto;
+    width: 15%;
+}
