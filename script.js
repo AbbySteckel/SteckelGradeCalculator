@@ -1,4 +1,4 @@
-
+//Abby Steckel, Grade Calculator, Submitted 12/7
 
 function calculateCurrentGrade() {
     clearData();
