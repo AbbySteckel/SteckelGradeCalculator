@@ -18,7 +18,7 @@ button {
 
 div {
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     color: white;
 
 }
@@ -29,10 +29,19 @@ body {
     text-align: center;
 }
 
+#currentGrade {
+    margin-bottom: 20px;
+}
+
 #finalExamGradeNeeded {
     background-color: black;
     border: 1px solid white;
     position: relative;
     margin: auto;
     width: 15%;
+    display: none;
+}
+
+td {
+    vertical-align: middle;
 }

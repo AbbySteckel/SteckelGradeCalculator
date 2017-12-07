@@ -2,54 +2,42 @@
 
 function calculateCurrentGrade() {
     clearData();
-    var hwAvg=avg(convertToArray(document.getElementById("hwGrades").value));
-    var quizAvg=avg(convertToArray(document.getElementById("quizGrades").value));
-    var testAvg=avg(convertToArray(document.getElementById("testGrades").value));
-    var midtermAvg=avg(convertToArray(document.getElementById("midtermGrades").value));
-    var hwWeight=convertToNum(hwWeight=document.getElementById("hwWeight").value);
-    var quizWeight=convertToNum(document.getElementById("quizWeight").value);
-    var testWeight=convertToNum(document.getElementById("testWeight").value);
-    var midtermWeight=convertToNum(document.getElementById("midtermWeight").value);
-    if(!isNaN(hwAvg)) {
+    var hwAvg = avg(convertToArray(document.getElementById("hwGrades").value));
+    var quizAvg = avg(convertToArray(document.getElementById("quizGrades").value));
+    var testAvg = avg(convertToArray(document.getElementById("testGrades").value));
+    var midtermAvg = avg(convertToArray(document.getElementById("midtermGrades").value));
+    var hwWeight = convertToNum(hwWeight = document.getElementById("hwWeight").value);
+    var quizWeight = convertToNum(document.getElementById("quizWeight").value);
+    var testWeight = convertToNum(document.getElementById("testWeight").value);
+    var midtermWeight = convertToNum(document.getElementById("midtermWeight").value);
+    if (!isNaN(hwAvg)) {
         document.getElementById("hwAvg").innerHTML = hwAvg;
     }
-    colorRow(hwAvg,document.getElementById("hw"));
-    validateGrade(hwAvg,document.getElementById("hwGrades"));
-    if(!isNaN(quizAvg)){
-        document.getElementById("quizAvg").innerHTML=quizAvg;
+    colorRow(hwAvg, document.getElementById("hw"));
+    validateGrade(hwAvg, document.getElementById("hwGrades"));
+    if (!isNaN(quizAvg)) {
+        document.getElementById("quizAvg").innerHTML = quizAvg;
     }
-    colorRow(quizAvg,document.getElementById("quizzes"));
-    validateGrade(quizAvg,document.getElementById("quizGrades"));
-    if(!isNaN(testAvg)){
-        document.getElementById("testAvg").innerHTML=testAvg;
+    colorRow(quizAvg, document.getElementById("quizzes"));
+    validateGrade(quizAvg, document.getElementById("quizGrades"));
+    if (!isNaN(testAvg)) {
+        document.getElementById("testAvg").innerHTML = testAvg;
     }
-    colorRow(testAvg,document.getElementById("tests"));
-    validateGrade(testAvg,document.getElementById("testGrades"));
-    if(!isNaN(midtermAvg)){
-        document.getElementById("midtermAvg").innerHTML=midtermAvg;
+    colorRow(testAvg, document.getElementById("tests"));
+    validateGrade(testAvg, document.getElementById("testGrades"));
+    if (!isNaN(midtermAvg)) {
+        document.getElementById("midtermAvg").innerHTML = midtermAvg;
     }
-    colorRow(midtermAvg,document.getElementById("midterms"));
-    validateGrade(midtermAvg,document.getElementById("midtermGrades"));
-    var currentGrade=0;
-    currentGrade+=(hwAvg*hwWeight);
-    currentGrade+=(quizAvg*quizWeight);
-    currentGrade+=(testAvg*testWeight);
-    currentGrade+=(midtermAvg*midtermWeight);
-    currentGrade/=(hwWeight+quizWeight+testWeight+midtermWeight);
-    if(!isNaN(currentGrade)){
-        document.getElementById("currentGrade").innerHTML=Math.round(currentGrade);
-    }
-    if(currentGrade<=100 && currentGrade>=90){
-        document.getElementById("message").innerHTML="Keep up the good work.";
-    }
-    if(currentGrade<90 && currentGrade>=80){
-        document.getElementById("message").innerHTML="You've put in some good effort. Finish strong!";
-    }
-    if(currentGrade<80 && currentGrade>=70){
-        document.getElementById("message").innerHTML="Think about how you can improve study habits for next semester.";
-    }
-    if(currentGrade<70){
-        document.getElementById("message").innerHTML="It's not the end of the world. Better luck next time."
+    colorRow(midtermAvg, document.getElementById("midterms"));
+    validateGrade(midtermAvg, document.getElementById("midtermGrades"));
+    var currentGrade = 0;
+    currentGrade += (hwAvg * hwWeight);
+    currentGrade += (quizAvg * quizWeight);
+    currentGrade += (testAvg * testWeight);
+    currentGrade += (midtermAvg * midtermWeight);
+    currentGrade /= (hwWeight + quizWeight + testWeight + midtermWeight);
+    if (!isNaN(currentGrade)) {
+        document.getElementById("currentGrade").innerHTML = Math.round(currentGrade);
     }
 }
 
@@ -68,13 +56,14 @@ function calcFinalExamGradeNeeded(){
     finalGradeNeeded-=(hwAvg*hwWeight+quizAvg*quizWeight+testAvg*testWeight+midtermAvg*midtermWeight);
     finalGradeNeeded/=finalWeight;
     if(!isNaN(finalGradeNeeded)){
-        document.getElementById("finalExamGradeNeeded").innerHTML=Math.round(finalGradeNeeded);
+        var displayElement = document.getElementById("finalExamGradeNeeded");
+        displayElement.innerHTML=Math.round(finalGradeNeeded);
+        displayElement.style.display = 'block';
     }
 }
 
 function clearData(){
     document.getElementById("error").innerHTML="";
-    document.getElementById("message").innerHTML="";
     var field1=document.getElementById("hwGrades");
     var field2=document.getElementById("quizGrades");
     var field3=document.getElementById("testGrades");
@@ -115,17 +104,14 @@ function convertToNum(str){
 }
 
 function convertToArray(str){
+    console.log(str);
     var arr = str.split(",");
     for (var i=0; i<arr.length; i++){
         arr[i]=parseInt(arr[i]);
+        console.log(arr[i]);
     }
     console.log(arr);
     return arr;
-}
-
-function convertToString(num) {
-    var output=num.toString();
-    return output;
 }
 
 function avg(arr){
